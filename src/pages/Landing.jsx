@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Landing = () => {
     const navigate = useNavigate();
     return (
-        <section className="bg-accent h-screen px-4 py-6 space-y-2 flex flex-col justify-end font-rubik">
+        <section className="bg-accent h-screen px-4 py-6 space-y-2 flex flex-col justify-end font-rubik max-w-md mx-auto border border-primary">
             <h1 className="text-3xl font-medium text-dark">Welcome to PopX</h1>
             <p className="text-dark opacity-60 w-4/5 mb-8 text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.

@@ -1,9 +1,12 @@
+import { useLocation } from "react-router-dom";
 import placeholder from "../assets/user/user_placeholder.png";
 import { FaCamera } from "react-icons/fa";
 
 const Profile = () => {
+    const location = useLocation();
+    const { email, name } = location.state || {};
     return (
-        <section className="h-screen bg-neutral-200 font-rubik flex flex-col">
+        <section className="h-screen bg-neutral-200 font-rubik flex flex-col max-w-md mx-auto border border-primary">
             <h1 className="text-dark bg-accent px-4 py-6 text-lg">
                 Account Settings
             </h1>
@@ -21,11 +24,9 @@ const Profile = () => {
                     </div>
                     <div>
                         <h1 className="text-[15px] font-medium text-dark">
-                            Marry Doe
+                            {name || "Marry Doe"}
                         </h1>
-                        <p className="text-sm text-dark leading-5">
-                            email@email.com
-                        </p>
+                        <p className="text-sm text-dark leading-5">{email}</p>
                     </div>
                 </div>
                 <p className="text-sm text-dark leading-5">
