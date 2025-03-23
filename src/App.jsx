@@ -1,4 +1,12 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
 const App = () => {
-    return <h1 className="text-red-500">App</h1>;
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Landing />} />
+            </Routes>
+        </Router>
+    );
 };
 export default App;
