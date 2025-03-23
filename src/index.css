@@ -6,6 +6,13 @@
     --color-primary-dark: #4e14c7;
     --color-secondary: #cebafb;
     --color-secondary-dark: #b8a6e0;
+    --color-accent: #f7f8f9;
     --color-dark: #1d2226;
     --font-rubik: "Rubik", sans-serif;
+}
+
+button:disabled {
+    color: white;
+    background-color: #CBCBCB;
+    cursor: not-allowed;
 }
