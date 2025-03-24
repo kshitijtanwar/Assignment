@@ -8,6 +8,8 @@ import FormErrors from "../components/FormErrors";
 import MoonLoader from "react-spinners/MoonLoader";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
+// eslint-disable-next-line
+import { motion } from "framer-motion";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -27,7 +29,12 @@ const Register = () => {
         }, 2000);
     };
     return (
-        <section className="bg-accent h-screen px-4 py-6 font-rubik space-y-2 max-w-md mx-auto border border-primary">
+        <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            className="bg-accent h-screen px-4 py-6 font-rubik space-y-2 max-w-md mx-auto border border-primary"
+        >
             <h1 className="text-3xl w-3/5 mb-8 font-medium">
                 Create your PopX account
             </h1>
@@ -145,7 +152,7 @@ const Register = () => {
                     isLoadingText={`Creating Account...`}
                 />
             </form>
-        </section>
+        </motion.section>
     );
 };
 export default Register;

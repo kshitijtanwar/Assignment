@@ -1,12 +1,19 @@
 import { useLocation } from "react-router-dom";
 import placeholder from "../assets/user/user_placeholder.png";
 import { FaCamera } from "react-icons/fa";
+// eslint-disable-next-line
+import { motion } from "framer-motion";
 
 const Profile = () => {
     const location = useLocation();
     const { email, name } = location.state || {};
     return (
-        <section className="h-screen bg-neutral-200 font-rubik flex flex-col max-w-md mx-auto border border-primary">
+        <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            className="h-screen bg-neutral-200 font-rubik flex flex-col max-w-md mx-auto border border-primary"
+        >
             <h1 className="text-dark bg-accent px-4 py-6 text-lg">
                 Account Settings
             </h1>
@@ -37,7 +44,7 @@ const Profile = () => {
                 <div className="border-b-2 border-dashed border-accent-dark mt-2"></div>
             </div>
             <div className="border-b-2 border-dashed border-accent-dark mb-10"></div>
-        </section>
+        </motion.section>
     );
 };
 export default Profile;

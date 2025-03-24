@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import FormErrors from "../components/FormErrors";
 import MoonLoader from "react-spinners/MoonLoader";
 import toast from "react-hot-toast";
+// eslint-disable-next-line
+import { motion } from "framer-motion";
 
 const SignIn = () => {
     const {
@@ -26,7 +28,12 @@ const SignIn = () => {
         }, 2000);
     };
     return (
-        <section className="bg-accent h-screen px-4 py-6 font-rubik space-y-2 max-w-md mx-auto border border-primary">
+        <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            className="bg-accent h-screen px-4 py-6 font-rubik space-y-2 max-w-md mx-auto border border-primary"
+        >
             <h1 className="text-3xl w-3/5 font-medium">
                 Signin to your PopX account
             </h1>
@@ -83,7 +90,7 @@ const SignIn = () => {
                     }
                 />
             </form>
-        </section>
+        </motion.section>
     );
 };
 export default SignIn;
